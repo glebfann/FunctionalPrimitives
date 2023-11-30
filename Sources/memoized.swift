@@ -1,6 +1,22 @@
-
 // MARK: iOS 17.0.0, macOS 14.0.0 and above
 
+/// Memoization optimisation technique where the return values of
+/// a function are cached to avoid repeating the same computation.
+/// Example usage:
+///
+///     func fibonacci(_ number: Int) -> Int {
+///       number < 2 
+///         ? number
+///         : fibonacci(number - 1) + fibonacci(number - 2)
+///     }
+///
+///     print(fibonacci(40) // Very slow... O(e^n) complexity
+///     print(memoized(fibonacci(40)) // O(n) complexity
+///
+/// - Parameters:
+///   - f: A function whose result is to be memoized.
+///
+/// - Returns: Function with memoization
 @available(iOS 17.0.0, macOS 14.0.0, watchOS 10.0.0, *)
 @inlinable
 public func memoized<each Arg: Hashable, Return>(
@@ -10,7 +26,6 @@ public func memoized<each Arg: Hashable, Return>(
   // Parameter packs workaround
   let get: (Key<repeat each Arg>) -> Return? = { cache[$0] }
   let set: (Key<repeat each Arg>, Return) -> Void = { cache[$0] = $1 }
-  
   return { (arg: repeat each Arg) -> Return in
     let key = Key<repeat each Arg>(arg: (repeat each arg))
     if let cached = get(key) {
@@ -31,7 +46,6 @@ public func memoized<each Arg: Hashable, Return>(
   // Parameter packs workaround
   let get: (Key<repeat each Arg>) -> Return? = { cache[$0] }
   let set: (Key<repeat each Arg>, Return) -> Void = { cache[$0] = $1 }
-
   return { (arg: repeat each Arg) -> Return in
     let key = Key<repeat each Arg>(arg: (repeat each arg))
     if let cached = get(key) {

@@ -5,20 +5,17 @@ import PackageDescription
 
 let package = Package(
     name: "FunctionalPrimitives",
+    platforms: [.iOS(.v12)],
     products: [
         .library(
             name: "FunctionalPrimitives",
             targets: ["FunctionalPrimitives"]
-        ),
+        )
     ],
     targets: [
         .target(
             name: "FunctionalPrimitives",
             path: "Sources"
-        ),
-        .testTarget(
-            name: "FunctionalPrimitivesTests",
-            dependencies: ["FunctionalPrimitives"]
-        ),
+        )
     ]
 )

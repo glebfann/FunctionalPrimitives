@@ -1,6 +1,27 @@
-
 // MARK: iOS 17.0.0, macOS 14.0.0 and above
 
+/// Weakly captures a method of `target`
+///
+///     class ViewController {
+///       let textHandler = TextHandler()
+///       ...
+///       override func viewDidLoad() {
+///         ...
+///         textHandler.delegate = weakify(self, in: type(of: self).textUpdated)
+///       }
+///
+///       func textUpdated(_ text: String) {
+///         ...
+///       }
+///     }
+///
+/// - Note: Semantically the same as `textHandler.delegate = { [weak self] in self?.textUpdated($0) }`
+///
+/// - Parameters:
+///   - target: The instance that should be captured weakly.
+///   - action: A closure representing the method that takes one argument.
+///
+/// - Returns: A closure that weakly captures the method of `target`
 @available(iOS 17.0.0, macOS 14.0.0, *)
 @inlinable @inline(__always)
 public func weakify<Target: AnyObject, each Arg>(

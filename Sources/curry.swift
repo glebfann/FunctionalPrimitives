@@ -1,3 +1,18 @@
+/// Curries a function with arguments.
+/// Example usage:
+///
+///     func add(_ a: Int, _ b: Int) -> Int {
+///       return a + b
+///     }
+///
+///     let curriedAdd = curry(add)
+///     let add2 = curriedAdd(2)
+///     let result = add2(3) // result = 5
+///
+/// - Parameters:
+///   - f: The function to curry.
+///
+/// - Returns: Curried function
 @inlinable
 public func curry<Arg1, Return>(
   _ f: @escaping (Arg1) -> Return
@@ -18,7 +33,7 @@ public func curry<Arg1, Arg2, Return>(
   }
 }
 
-@inlinable @inline(__always)
+@inlinable
 public func curry<Arg1, Arg2, Arg3, Return>(
   _ f: @escaping ((Arg1, Arg2, Arg3)) -> Return
 ) -> (Arg1) -> (Arg2) -> (Arg3) -> Return {
