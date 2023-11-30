@@ -1,7 +1,7 @@
 
 // MARK: iOS 17.0.0, macOS 14.0.0 and above
 
-@available(iOS 17.0.0, macOS 14.0.0, *)
+@available(iOS 17.0.0, macOS 14.0.0, watchOS 10.0.0, *)
 @inlinable
 public func memoized<each Arg: Hashable, Return>(
   _ f: @escaping ((repeat each Arg) -> Return)
@@ -22,7 +22,7 @@ public func memoized<each Arg: Hashable, Return>(
   }
 }
 
-@available(iOS 17.0.0, macOS 14.0.0, *)
+@available(iOS 17.0.0, macOS 14.0.0, watchOS 10.0.0, *)
 @inlinable
 public func memoized<each Arg: Hashable, Return>(
   _ f: @escaping ((repeat each Arg) throws -> Return)

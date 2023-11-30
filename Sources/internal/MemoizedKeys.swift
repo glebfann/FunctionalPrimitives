@@ -1,7 +1,7 @@
 
 // MARK: iOS 17.0.0, macOS 14.0.0 and above
 
-@available(iOS 17.0.0, macOS 14.0.0, *)
+@available(iOS 17.0.0, macOS 14.0.0, watchOS 10.0.0, *)
 @usableFromInline
 internal struct Key<each Arg: Hashable>: Hashable {
   @usableFromInline
