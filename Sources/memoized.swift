@@ -1,4 +1,4 @@
-// MARK: iOS 17.0.0, macOS 14.0.0 and above
+// MARK: iOS 17.0.0, macOS 14.0.0, watchOS 10.0.0 and above
 
 /// Memoization optimisation technique where the return values of
 /// a function are cached to avoid repeating the same computation.
@@ -57,7 +57,7 @@ public func memoized<each Arg: Hashable, Return>(
   }
 }
 
-// MARK: UP to 17.0.0, macOS 14.0.0
+// MARK: iOS 12..<17, macOS 10.13.0..<14.0.0, watchOS 4..<10
 
 @inlinable
 public func memoized<Arg: Hashable, Return>(

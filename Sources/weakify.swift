@@ -1,4 +1,4 @@
-// MARK: iOS 17.0.0, macOS 14.0.0 and above
+// MARK: iOS 17.0.0, macOS 14.0.0, watchOS 10.0.0 and above
 
 /// Weakly captures a method of `target`
 ///
@@ -46,7 +46,7 @@ public func weakify<Target: AnyObject, each Arg>(
   }
 }
 
-// MARK: UP to 17.0.0, macOS 14.0.0
+// MARK: iOS 12..<17, macOS 10.13.0..<14.0.0, watchOS 4..<10
 
 @inlinable
 public func weakify<Target: AnyObject>(

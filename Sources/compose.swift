@@ -55,7 +55,7 @@ func compose<Arg1, Arg2, Arg3, Arg4, Arg5>(
   { (arg1: Arg1) -> Arg5 in f4(f3(f2(f1(arg1)))) }
 }
 
-// MARK: Throws compose
+// MARK: Throwable compose
 
 @inlinable @inline(__always)
 public func compose<Arg1, Arg2, Arg3>(
