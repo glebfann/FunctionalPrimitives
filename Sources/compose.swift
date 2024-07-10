@@ -37,7 +37,7 @@ public func compose<Arg1, Arg2, Arg3>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4>(
+public func compose<Arg1, Arg2, Arg3, Arg4>(
   _ f1: @escaping (Arg1) -> Arg2,
   _ f2: @escaping (Arg2) -> Arg3,
   _ f3: @escaping (Arg3) -> Arg4
@@ -46,7 +46,7 @@ func compose<Arg1, Arg2, Arg3, Arg4>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4, Arg5>(
+public func compose<Arg1, Arg2, Arg3, Arg4, Arg5>(
   _ f1: @escaping (Arg1) -> Arg2,
   _ f2: @escaping (Arg2) -> Arg3,
   _ f3: @escaping (Arg3) -> Arg4,
@@ -82,7 +82,7 @@ public func compose<Arg1, Arg2, Arg3>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4>(
+public func compose<Arg1, Arg2, Arg3, Arg4>(
   _ f1: @escaping (Arg1) throws -> Arg2,
   _ f2: @escaping (Arg2) -> Arg3,
   _ f3: @escaping (Arg3) -> Arg4
@@ -91,7 +91,7 @@ func compose<Arg1, Arg2, Arg3, Arg4>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4>(
+public func compose<Arg1, Arg2, Arg3, Arg4>(
   _ f1: @escaping (Arg1) -> Arg2,
   _ f2: @escaping (Arg2) throws -> Arg3,
   _ f3: @escaping (Arg3) -> Arg4
@@ -100,7 +100,7 @@ func compose<Arg1, Arg2, Arg3, Arg4>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4>(
+public func compose<Arg1, Arg2, Arg3, Arg4>(
   _ f1: @escaping (Arg1) -> Arg2,
   _ f2: @escaping (Arg2) -> Arg3,
   _ f3: @escaping (Arg3) throws -> Arg4
@@ -109,7 +109,7 @@ func compose<Arg1, Arg2, Arg3, Arg4>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4>(
+public func compose<Arg1, Arg2, Arg3, Arg4>(
   _ f1: @escaping (Arg1) throws -> Arg2,
   _ f2: @escaping (Arg2) throws -> Arg3,
   _ f3: @escaping (Arg3) -> Arg4
@@ -118,7 +118,7 @@ func compose<Arg1, Arg2, Arg3, Arg4>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4>(
+public func compose<Arg1, Arg2, Arg3, Arg4>(
   _ f1: @escaping (Arg1) throws -> Arg2,
   _ f2: @escaping (Arg2) -> Arg3,
   _ f3: @escaping (Arg3) throws -> Arg4
@@ -127,7 +127,7 @@ func compose<Arg1, Arg2, Arg3, Arg4>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4>(
+public func compose<Arg1, Arg2, Arg3, Arg4>(
   _ f1: @escaping (Arg1) -> Arg2,
   _ f2: @escaping (Arg2) throws -> Arg3,
   _ f3: @escaping (Arg3) throws -> Arg4
@@ -136,7 +136,7 @@ func compose<Arg1, Arg2, Arg3, Arg4>(
 }
 
 @inlinable @inline(__always)
-func compose<Arg1, Arg2, Arg3, Arg4>(
+public func compose<Arg1, Arg2, Arg3, Arg4>(
   _ f1: @escaping (Arg1) throws -> Arg2,
   _ f2: @escaping (Arg2) throws -> Arg3,
   _ f3: @escaping (Arg3) throws -> Arg4
