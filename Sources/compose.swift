@@ -143,4 +143,3 @@ func compose<Arg1, Arg2, Arg3, Arg4>(
 ) -> (Arg1) throws -> Arg4 {
   { (arg1: Arg1) -> Arg4 in try f3(f2(f1(arg1))) }
 }
-

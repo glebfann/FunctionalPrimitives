@@ -13,7 +13,7 @@
 ///   - f: The function to curry.
 ///
 /// - Returns: Curried function
-@inlinable
+@inlinable @inline(__always)
 public func curry<Arg1, Return>(
   _ f: @escaping (Arg1) -> Return
 ) -> (Arg1) -> Return {
@@ -22,25 +22,25 @@ public func curry<Arg1, Return>(
   }
 }
 
-@inlinable
+@inlinable @inline(__always)
 public func curry<Arg1, Arg2, Return>(
   _ f: @escaping ((Arg1, Arg2)) -> Return
 ) -> (Arg1) -> (Arg2) -> Return {
-  { (arg1: Arg1) -> (Arg2) -> Return in
+  { (arg1: Arg1) -> (Arg2) -> Return in 
     { (arg2: Arg2) -> Return in
       f((arg1, arg2))
     }
   }
 }
 
-@inlinable
+@inlinable @inline(__always)
 public func curry<Arg1, Arg2, Arg3, Return>(
   _ f: @escaping ((Arg1, Arg2, Arg3)) -> Return
 ) -> (Arg1) -> (Arg2) -> (Arg3) -> Return {
-  {
-    (arg1: Arg1) -> (Arg2) -> (Arg3) -> Return in {
-      (arg2: Arg2) -> (Arg3) -> Return in {
-        (arg3: Arg3) -> Return in f((arg1, arg2, arg3))
+  { (arg1: Arg1) -> (Arg2) -> (Arg3) -> Return in 
+    { (arg2: Arg2) -> (Arg3) -> Return in
+      { (arg3: Arg3) -> Return in
+        f((arg1, arg2, arg3))
       }
     }
   }

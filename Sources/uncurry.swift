@@ -14,7 +14,7 @@
 /// - Returns: Uncurried function
 @inlinable @inline(__always)
 public func uncurry<Arg1, Return>(
-    _ f: @escaping (Arg1) -> Return
+  _ f: @escaping (Arg1) -> Return
 ) -> (Arg1) -> Return {
   { (arg1: Arg1) -> Return in
     f(arg1)
@@ -23,7 +23,7 @@ public func uncurry<Arg1, Return>(
 
 @inlinable @inline(__always)
 public func uncurry<Arg1, Arg2, Return>(
-    _ f: @escaping (Arg1) -> (Arg2) -> Return
+  _ f: @escaping (Arg1) -> (Arg2) -> Return
 ) -> (Arg1, Arg2) -> Return {
   { (arg1: Arg1, arg2: Arg2) -> Return in
     f(arg1)(arg2)
@@ -32,7 +32,7 @@ public func uncurry<Arg1, Arg2, Return>(
 
 @inlinable @inline(__always)
 public func uncurry<Arg1, Arg2, Arg3, Return>(
-    _ f: @escaping (Arg1) -> (Arg2) -> (Arg3) -> Return
+  _ f: @escaping (Arg1) -> (Arg2) -> (Arg3) -> Return
 ) -> (Arg1, Arg2, Arg3) -> Return {
   { (arg1: Arg1, arg2: Arg2, arg3: Arg3) -> Return in
     f(arg1)(arg2)(arg3)
