@@ -90,7 +90,7 @@ func sum(_ lhs: Int, _ rhs: Int) -> Int {
 let curriedSum = curry(sum)
 print(curriedSum(2)(3)) // 5
 
-let uncurriedSum = uncarry(curriedSum)
+let uncurriedSum = uncurry(curriedSum)
 print(uncurriedSum(2, 3)) // 5
 ```
 
