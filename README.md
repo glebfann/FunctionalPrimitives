@@ -35,35 +35,34 @@ dependencies: [
 ### [`weakify`](https://github.com/gleb032/FunctionalPrimitives/blob/master/Sources/weakify.swift)
 Converts a class method to a closure with a weak reference to the instance of the class.
 
-For example we have `TableViewController` and cell `TableViewCell`:
+For example we have `ViewController`:
 ```swift
-class TableViewController: UITableViewController {
+class ViewController: UIViewController {
+  let networkManager = NetworkManager()
   ...
-  func handleTextChange(_ text: String) {
-    // some work
-  }
-}
 
-class TableViewCell: UITableViewCell {
-    var textChangedHandler: ((String) -> Void)?
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    networkManager.fetchData {
+      self.updateUI()
+    }
+  }
+
+  func updateUI() {
     ...
-}
-```
-We want to inject `handleTextChange` in `TableViewCell` in `cellForRowAt` method:
-```swift
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-  let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-  cell.textChangedHandler = { self.handleTextChange($0) }
-  return cell
+  }
+
 }
 ```
 This may causes a memory leak. Insted it we can use `weakify`:
 ```swift
-  cell.textChangedHandler = weakify(self, in: type(of: self).handleTextChange)
+  networkManager.fetchData(completion: weakify(self, in: ViewController.updateUI))
 ```
 Actually this is semantically the same as:
 ```swift
-cell.textChangedHandler = { [weak self] in self?.handleTextChange($0) }
+networkManager.fetchData { [weak self] in
+  self?.updateUI()
+}
 ```
 
 ### [`papply`](https://github.com/gleb032/FunctionalPrimitives/blob/master/Sources/papply.swift)
