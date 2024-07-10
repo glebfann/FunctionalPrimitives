@@ -94,21 +94,6 @@ let uncurriedSum = uncurry(curriedSum)
 print(uncurriedSum(2, 3)) // 5
 ```
 
-### [`memoized`](https://github.com/gleb032/FunctionalPrimitives/blob/master/Sources/memoized.swift)
-Memoization optimisation technique where the return values of a function are cached to avoid repeating the same computation.
-
-For example:
-```swift
-func fibonacci(_ number: Int) -> Int {
-  number < 2 
-    ? number
-    : fibonacci(number - 1) + fibonacci(number - 2)
-}
-
-print(fibonacci(40) // Very slow... O(e^n) complexity
-print(memoized(fibonacci(40)) // O(n) complexity
-```
-
 ### [`compose`](https://github.com/gleb032/FunctionalPrimitives/blob/master/Sources/compose.swift)
 Composes functions, i.e. composition of functions `(A) -> (B)` and `(B) -> (C`) will give `(A) -> (C)`.
 
