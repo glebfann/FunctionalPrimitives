@@ -112,7 +112,7 @@ func toString(_ num: Int) -> String {
 }
 
 let pipeline = compose(double, add5, toString)
-let result = pipeline(10) //  result = "30"
+let result = pipeline(10) //  result = "25"
 ```
 
 
