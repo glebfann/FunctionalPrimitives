@@ -18,7 +18,7 @@ Swift functional primitives.
 1. Click File > Add Package Dependencies
 2. Paste the following link into the search field on the upper-right:
    ```
-   https://github.com/gleb032/FunctionalPrimitives.git
+   https://github.com/glebfann/FunctionalPrimitives.git
    ```
 
 ### Swift Package Manager
