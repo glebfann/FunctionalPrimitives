@@ -22,6 +22,21 @@ public func curry<Arg1, Return>(
   }
 }
 
+/// Curries a function with arguments.
+/// Example usage:
+///
+///     func add(_ a: Int, _ b: Int) -> Int {
+///       return a + b
+///     }
+///
+///     let curriedAdd = curry(add)
+///     let add2 = curriedAdd(2)
+///     let result = add2(3) // result = 5
+///
+/// - Parameters:
+///   - f: The function to curry.
+///
+/// - Returns: Curried function
 @inlinable @inline(__always)
 public func curry<Arg1, Arg2, Return>(
   _ f: @escaping ((Arg1, Arg2)) -> Return
@@ -33,6 +48,21 @@ public func curry<Arg1, Arg2, Return>(
   }
 }
 
+/// Curries a function with arguments.
+/// Example usage:
+///
+///     func add(_ a: Int, _ b: Int) -> Int {
+///       return a + b
+///     }
+///
+///     let curriedAdd = curry(add)
+///     let add2 = curriedAdd(2)
+///     let result = add2(3) // result = 5
+///
+/// - Parameters:
+///   - f: The function to curry.
+///
+/// - Returns: Curried function
 @inlinable @inline(__always)
 public func curry<Arg1, Arg2, Arg3, Return>(
   _ f: @escaping ((Arg1, Arg2, Arg3)) -> Return
