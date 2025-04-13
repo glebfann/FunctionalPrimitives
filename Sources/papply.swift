@@ -7,9 +7,7 @@
 ///
 /// - Parameters:
 ///   - f: A function taking one or more arguments and returning a value
-///   - arg1: Specified argument to be partially applied
-///   - arg2: Specified argument to be partially applied
-///   - arg3: Specified argument to be partially applied
+///   - arg: Specified argument to be partially applied
 ///
 /// - Returns: A partially applied function with the specified arguments.
 @inlinable @inline(__always)
@@ -20,6 +18,18 @@ public func papply<Return, Arg>(
   { f(arg) }
 }
 
+/// Partially apply of function.
+/// Example usage:
+///
+///     let add: (Int, Int) -> Int = { $0 + $1 }
+///     let add3 = papply(add, 3)
+///     let result = add3(4) // result = 7
+///
+/// - Parameters:
+///   - f: A function taking one or more arguments and returning a value
+///   - arg1: Specified argument to be partially applied
+///
+/// - Returns: A partially applied function with the specified arguments.
 @inlinable @inline(__always)
 public func papply<Return, Arg1, Arg2>(
   _ f: @escaping (Arg1, Arg2) -> Return,
@@ -28,6 +38,19 @@ public func papply<Return, Arg1, Arg2>(
   { (arg2: Arg2) -> Return in f(arg1, arg2) }
 }
 
+/// Partially apply of function.
+/// Example usage:
+///
+///     let add: (Int, Int) -> Int = { $0 + $1 }
+///     let add3 = papply(add, 3)
+///     let result = add3(4) // result = 7
+///
+/// - Parameters:
+///   - f: A function taking one or more arguments and returning a value
+///   - arg1: Specified argument to be partially applied
+///   - arg2: Specified argument to be partially applied
+///
+/// - Returns: A partially applied function with the specified arguments.
 @inlinable @inline(__always)
 public func papply<Return, Arg1, Arg2>(
   _ f: @escaping (Arg1, Arg2) -> Return,
@@ -37,6 +60,19 @@ public func papply<Return, Arg1, Arg2>(
   { f(arg1, arg2) }
 }
 
+/// Partially apply of function.
+/// Example usage:
+///
+///     let add: (Int, Int) -> Int = { $0 + $1 }
+///     let add3 = papply(add, 3)
+///     let result = add3(4) // result = 7
+///
+/// - Parameters:
+///   - f: A function taking one or more arguments and returning a value
+///   - arg1: Specified argument to be partially applied
+///   - arg2: Specified argument to be partially applied
+///
+/// - Returns: A partially applied function with the specified arguments.
 @inlinable @inline(__always)
 public func papply<Return, Arg1, Arg2, Arg3>(
   _ f: @escaping (Arg1, Arg2, Arg3) -> Return,
@@ -45,6 +81,19 @@ public func papply<Return, Arg1, Arg2, Arg3>(
   { (arg2: Arg2, arg3: Arg3) -> Return in f(arg1, arg2, arg3) }
 }
 
+/// Partially apply of function.
+/// Example usage:
+///
+///     let add: (Int, Int) -> Int = { $0 + $1 }
+///     let add3 = papply(add, 3)
+///     let result = add3(4) // result = 7
+///
+/// - Parameters:
+///   - f: A function taking one or more arguments and returning a value
+///   - arg1: Specified argument to be partially applied
+///   - arg2: Specified argument to be partially applied
+///
+/// - Returns: A partially applied function with the specified arguments.
 @inlinable @inline(__always)
 public func papply<Return, Arg1, Arg2, Arg3>(
   _ f: @escaping (Arg1, Arg2, Arg3) -> Return,
@@ -54,6 +103,20 @@ public func papply<Return, Arg1, Arg2, Arg3>(
   { (arg3: Arg3) -> Return in f(arg1, arg2, arg3) }
 }
 
+/// Partially apply of function.
+/// Example usage:
+///
+///     let add: (Int, Int) -> Int = { $0 + $1 }
+///     let add3 = papply(add, 3)
+///     let result = add3(4) // result = 7
+///
+/// - Parameters:
+///   - f: A function taking one or more arguments and returning a value
+///   - arg1: Specified argument to be partially applied
+///   - arg2: Specified argument to be partially applied
+///   - arg3: Specified argument to be partially applied
+///
+/// - Returns: A partially applied function with the specified arguments.
 @inlinable @inline(__always)
 public func papply<Return, Arg1, Arg2, Arg3>(
   _ f: @escaping (Arg1, Arg2, Arg3) -> Return,
