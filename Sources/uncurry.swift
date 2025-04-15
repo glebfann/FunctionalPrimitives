@@ -21,6 +21,20 @@ public func uncurry<Arg1, Return>(
   }
 }
 
+/// Uncurries a function with arguments.
+/// Example usage:
+///
+///     func add(a: Int) -> (Int) -> Int {
+///       return { b in a + b }
+///     }
+///
+///     let uncurriedAdd = uncurry(add)
+///     let result = uncurriedAdd(5, 3) // result = 8
+///
+/// - Parameters:
+///   - f: The function to uncurry.
+///
+/// - Returns: Uncurried function
 @inlinable @inline(__always)
 public func uncurry<Arg1, Arg2, Return>(
   _ f: @escaping (Arg1) -> (Arg2) -> Return
@@ -30,6 +44,20 @@ public func uncurry<Arg1, Arg2, Return>(
   }
 }
 
+/// Uncurries a function with arguments.
+/// Example usage:
+///
+///     func add(a: Int) -> (Int) -> Int {
+///       return { b in a + b }
+///     }
+///
+///     let uncurriedAdd = uncurry(add)
+///     let result = uncurriedAdd(5, 3) // result = 8
+///
+/// - Parameters:
+///   - f: The function to uncurry.
+///
+/// - Returns: Uncurried function
 @inlinable @inline(__always)
 public func uncurry<Arg1, Arg2, Arg3, Return>(
   _ f: @escaping (Arg1) -> (Arg2) -> (Arg3) -> Return
